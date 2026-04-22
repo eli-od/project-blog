@@ -15,13 +15,13 @@ async function Home() {
       </h1>
 
       {/* TODO: Iterate over the data read from the file system! */}
-      {blogs.map((blog) => (
+      {blogs.map(({ slug, title, abstract, publishedOn }) => (
         <BlogSummaryCard
-          key={blog.slug}
-          slug={blog.slug}
-          title={blog.title}
-          abstract={blog.abstract}
-          publishedOn={blog.publishedOn}
+          key={slug}
+          slug={slug}
+          title={title}
+          abstract={abstract}
+          publishedOn={publishedOn}
         />
       ))}
     </div>
